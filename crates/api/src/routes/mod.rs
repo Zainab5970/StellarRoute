@@ -155,6 +155,7 @@ pub fn create_router(state: Arc<AppState>) -> Router {
         // Health check
         .route("/health", get(health::health_check))
         .route("/health/deps", get(health::dependency_health))
+        .merge(crate::card::router())
         .merge(operator_routes)
         .merge(live_path_routes)
         // API v2 seam (chain-aware assets; quotes remain on v1)
