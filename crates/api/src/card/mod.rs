@@ -7,6 +7,12 @@
 //! user signs the partner payment in their own wallet and the partner owns the
 //! card credentials.
 
+pub mod authorization;
+pub mod errors;
+pub mod fx;
+pub mod horizon;
+pub mod limits;
+pub mod mcc;
 pub mod store;
 
 use std::sync::{
